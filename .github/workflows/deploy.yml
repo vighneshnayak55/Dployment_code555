@@ -17,4 +17,5 @@ jobs:
         with:
           java-version: '17'
           distribution: 'temurin'   #is open jdk
-
+      - name: Analyze with sonar cloud
+        run: mvn clean verify sonar:sonar -Dsonar.token=${{ secrets.SONAR_TOKEN }}  # add this in github secret file
